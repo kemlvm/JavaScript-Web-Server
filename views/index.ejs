@@ -1,0 +1,54 @@
+<%- include ("./partials/header") %>
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>Clean Blog</h1>
+                        <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content-->
+    <div class="container px-4 px-lg-5">
+
+        <% SystemValue.forEach(d=> { %>
+            <!--For Start-->
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                
+                <div class="col-lg-3 mx-auto">
+                    <img class="img-thumbnail" src="<%= d.image %> " alt="blog images" />
+                </div>
+
+                <div class="col-lg-9 mx-auto col-xl-7">
+                    <div class="post-preview">
+                        <a href="post.html">
+                            <h2 class="post-title">
+                                <%= d.postTitle %>
+                            </h2>
+                            <h3 class="post-subtitle">
+                                <%= d.postsubTitle %>
+                            </h3>
+                        </a>
+                        <p class="post-meta">
+                            Tarafından
+                            <a href="#!">
+                                <%= d.author %>
+                            </a>
+                            <%= d.date %>
+                        </p>
+                    </div>
+                    <hr class="my-4" />
+                </div>
+            </div>
+            <% }) %>
+                <!--For End-->
+                                    <div class="d-flex justify-content-end mb-4">
+                        <a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a>
+                    </div>
+    </div>
+
+    <%- include ("./partials/footer") %>
